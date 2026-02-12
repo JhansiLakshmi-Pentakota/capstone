@@ -1,0 +1,14 @@
+import {test, expect} from '@playwright/test';
+test('Working with Checkboxes',async ({page})=>{
+    
+    await page.goto('https://the-internet.herokuapp.com/checkboxes')
+    await expect(page.locator('#checkboxes')).toBeVisible()
+    expect(await page.isChecked('input[type=checkbox]:nth-child(1)')).toBeFalsy()
+    expect(await page.isChecked('input[type=checkbox]:nth-child(3)')).toBeTruthy()
+    await page.check('input[type=checkbox]:nth-child(1)')
+    await page.uncheck('input[type=checkbox]:nth-child(3)')
+    expect(await page.isChecked('input[type=checkbox]:nth-child(1')).toBeTruthly()
+    expect(await page.isChecked('input[type=checkbox]:nth-child(1')).toBBeFalsy()
+    await page.check('input[type=checkbox]:nth-child(1)')
+    await page.uncheck('input[type=checkbox]:nth-child(3)')
+})
